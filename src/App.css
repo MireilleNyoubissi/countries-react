@@ -1,13 +1,75 @@
 *{
   box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(210, 105, 30, 0.3);
 }
 
 .card-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card{
+  flex-direction: row;
   width: 20%;
   margin: 1rem;
+  align-items: center;
+  border: 2px solid rgb(210, 105, 30, 0.7);
+}
+
+.card,
+.card-body,
+h5,
+input,
+span,
+p {
+  background-color: #FAEBD7;
+}
+
+.card-body {
+  text-align: left;
+}
+
+.card img {
+  width: 30%;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+form {
+  padding: 1rem 0rem 1rem 6.5rem;
+  background-color: rgb(210, 105, 30, 0.3);
+}
+
+input {
+  border: 3px solid rgb(210, 105, 30, 0.7);
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: rgb(210, 105, 30, 0.7);
+}
+
+input:focus {
+  border: 3px solid #8B0000;
+}
+
+span {
+  font-weight: 600;
+}
+
+
+p,
+span {
+  color: #2F4F4F;
+}
+
+h5 {
+  color: #8B0000;
 }

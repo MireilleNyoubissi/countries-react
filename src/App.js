@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import CountryCard from "./CountryCard";
 import CountriesAll from "./data/countriesAll.json";
 import './App.css';
 
 function App() {
+  const [countries, setCountries] = useState(CountriesAll);
+
+  function filteredCounties(nameText) {
+    setCountries(CountriesAll.filter(v => v.name.toLowerCase().includes(nameText) || v.capital.toLowerCase().includes(nameText)))
+  }
+
   return (
-    <div className="card-container">
+    <div className = "all">
       <form className="input-group rounded">
-        <input type="search" className="rounded" placeholder="Search" />
+        <input onKeyUp = {(e) => filteredCounties(e.currentTarget.value.toLowerCase())}  type="search" className="rounded" placeholder="Search country..." />
       </form>
-      <CountryCard data={CountriesAll} />
+      <CountryCard data={countries} />
     </div>
   );
 }
